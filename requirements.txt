@@ -1,0 +1,5 @@
+# Pacotes instalados
+
+# flask
+pip3 install flask==0.12.2
+

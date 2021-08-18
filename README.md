@@ -9,7 +9,7 @@
 <=, >=: versão maior ou igual e menor ou igual - ajuda a restringir versões, inclusive a definida.
 <, >: versão maior ou menor - ajuda a restringir versões, excluindo a definida.
 
-# Aula 1 
+# Aula 1 - parte 1
 # Como definir uma rota
 ```python
 app= Flask(__name__)
@@ -36,7 +36,7 @@ app.run()
 # Jinja2
 > Dentre as várias libs utilizadas pelo Flask, temos a chamada Jinja2, responsável por fazer com que a engine de templates funcione. Ou seja, permite renderizar conteúdo dinâmico em uma página HTML.
  
- # Aula 2
+ # Aula 1 - parte 2
 -  Como adicionar conteúdos dinâmicos no HTML
 ```html
             <h1>{{ titulo }}</h1>
@@ -62,7 +62,7 @@ app.run()
                         <td>{{ jogo.categoria }}</td>
                         <td>{{ jogo.console }}</td>
 ```
-# Aula 3 
+# Aula - parte 3 
 - Como criar itens para nossa aplicação
   - Criar classe e passar os objetos na lista
   - Receber os atributos dos objetos no html 
