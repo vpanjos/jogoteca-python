@@ -9,7 +9,12 @@
 <=, >=: versão maior ou igual e menor ou igual - ajuda a restringir versões, inclusive a definida.
 <, >: versão maior ou menor - ajuda a restringir versões, excluindo a definida.
 
-# Aula 1 - parte 1
+# Aula 1 - Listando jogos usando flask
+> - Como adicionar conteúdos dinâmicos 
+> - Como pegar dados do servidor 
+> - Como mostrar os atributos na view
+
+### parte 1
 # Como definir uma rota
 ```python
 app= Flask(__name__)
@@ -62,9 +67,12 @@ app.run()
                         <td>{{ jogo.categoria }}</td>
                         <td>{{ jogo.console }}</td>
 ```
-# Aula - parte 3 
+# Aula 1- parte 3 - Criando um jogo novo
 - Como criar itens para nossa aplicação
   - Criar classe e passar os objetos na lista
   - Receber os atributos dos objetos no html 
 - Como montar formulários utilizando o Flask 
 - O que é e como resolver POSTs no servidor
+
+# Aula 2 - Melhorando código e usabilidade
+
