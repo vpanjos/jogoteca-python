@@ -1,5 +1,5 @@
 # Web app com Flask 
-
+# Flask parte 1: Crie uma webapp com Python 3
 # Notas
 # pegaria a 0.11.1 que é última versão compatível com a 0.11.0
 > pip3 install flask~=0.11.0 
@@ -75,4 +75,12 @@ app.run()
 - O que é e como resolver POSTs no servidor
 
 # Aula 2 - Melhorando código e usabilidade
+- Como criar templates
+- Utilizando css
+    - Incluir bootstrap:
+    * Estático
+    ```html
+        <link rel="stylesheet" href="../static/bootstrap.css">
+    ```
+    * Url Dinâmica:
 
