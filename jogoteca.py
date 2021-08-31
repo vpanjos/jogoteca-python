@@ -50,8 +50,6 @@ def login():
 @app.route('/autenticar', methods=['POST'])
 def autenticar():
     if 'mestra' == request.form['senha']:
-        # session recebe um dicionario - criar um item,
-        # salvar o usuario que esta logado na sessao. Salvar o nome do usuario
         session ['usuario_logado'] = request.form['usuario']
         flash(request.form['usuario'] + ' logou com sucesso!')
         return redirect('/')

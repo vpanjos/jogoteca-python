@@ -83,4 +83,20 @@ app.run()
         <link rel="stylesheet" href="../static/bootstrap.css">
     ```
     * Url Dinâmica:
-
+  
+## Sessão - Login 
+- session recebe um dicionario - criar um item,
+- salvar o usuario que esta logado na sessao.
+- Salvar o nome do usuario
+- Importar o objeto session na aplicação e incluir uma nova chave neste objeto, que é um dicionário.
+```python
+def autenticar():
+    if 'mestra' == request.form['senha']:
+        
+        session ['usuario_logado'] = request.form['usuario']
+        flash(request.form['usuario'] + ' logou com sucesso!')
+        return redirect('/')
+    else:
+        flash('Não logado, tente novamente!')
+        return redirect('/login')
+```
