@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, session,flash
 
 app = Flask(__name__)
-app.secret_key = 'alura'
+app.secret_key = 'alura' # criar uma string de senha secreta para a sessao
 
 class Jogo:
     def __init__(self, nome, categoria, console):
@@ -27,7 +27,11 @@ def index():
 
 @app.route('/novo')
 def novo():
-    return render_template('novo.html', titulo='Novo jogo')
+    if session['usuario_logado'] == None:
+        flash('Nenhum usuário logado!')
+        return redirect('/login')
+    else:
+        return render_template('novo.html', titulo='Novo jogo')
 
 
 @app.route('/criar', methods=['POST', ])
@@ -56,6 +60,12 @@ def autenticar():
     else:
         flash('Não logado, tente novamente!')
         return redirect('/login')
+
+@app.route('/logout')
+def logout():
+    session['usuario_logado'] = None
+    flash('Nenhum usuário logado!')
+    return redirect('/')
 
 app.run(debug=True)
 # app.run()
