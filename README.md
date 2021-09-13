@@ -41,7 +41,7 @@ app.run()
 # Jinja2
 > Dentre as várias libs utilizadas pelo Flask, temos a chamada Jinja2, responsável por fazer com que a engine de templates funcione. Ou seja, permite renderizar conteúdo dinâmico em uma página HTML.
  
- # Aula 1 - parte 2
+ # Aula 2 
 -  Como adicionar conteúdos dinâmicos no HTML
 ```html
             <h1>{{ titulo }}</h1>
@@ -67,14 +67,14 @@ app.run()
                         <td>{{ jogo.categoria }}</td>
                         <td>{{ jogo.console }}</td>
 ```
-# Aula 1- parte 3 - Criando um jogo novo
+# Aula 3 - Criando um jogo novo
 - Como criar itens para nossa aplicação
   - Criar classe e passar os objetos na lista
   - Receber os atributos dos objetos no html 
 - Como montar formulários utilizando o Flask 
 - O que é e como resolver POSTs no servidor
 
-# Aula 2 - Melhorando código e usabilidade
+# Aula 4 - Melhorando código e usabilidade
 - Como criar templates
 - Utilizando css
     - Incluir bootstrap:
@@ -100,3 +100,10 @@ def autenticar():
         flash('Não logado, tente novamente!')
         return redirect('/login')
 ```
+
+# Aula 5
+- Como criar a tela de login
+- Como guardar os dados da sessão 
+- Como deslogar a sessão
+
+##  Protegendo uma rota

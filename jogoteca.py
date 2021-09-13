@@ -27,12 +27,9 @@ def index():
 
 @app.route('/novo')
 def novo():
-    if session['usuario_logado'] == None:
-        flash('Nenhum usuário logado!')
+    if 'usuario_logado' not in session or session['usuario_logado'] == None:
         return redirect('/login')
-    else:
-        return render_template('novo.html', titulo='Novo jogo')
-
+    return render_template('novo.html', titulo='Novo jogo')
 
 @app.route('/criar', methods=['POST', ])
 def criar():
