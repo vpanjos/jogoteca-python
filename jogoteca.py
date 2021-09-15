@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, session, flash
+from flask import Flask, render_template, request, redirect, session, flash,url_for
 
 app = Flask(__name__)
 app.secret_key = 'alura'  # criar uma string de senha secreta para a sessao
@@ -22,15 +22,14 @@ lista = [jogo1, jogo2, jogo3]
 @app.route('/')
 def index():
     # lista = ['Tetris', 'Super Mario', 'Pokemon Gold'] - lista local
-
     return render_template('lista.html', titulo='Jogos', jogos=lista)
 
 
 @app.route('/novo')
 def novo():
-    if 'usuario_logado' not in session or session['usuario_logado'] == None:
-        return redirect('/login?proxima=novo')
-    return render_template('novo.html', titulo='Novo jogo')
+    if 'usuario_logado' in session and session['usuario_logado'] != None:
+        return render_template('novo.html', titulo='Novo jogo')
+    return redirect(url_for('login', proxima=url_for('novo')))
 
 
 @app.route('/criar', methods=['POST', ])
@@ -42,7 +41,7 @@ def criar():
     lista.append(jogo)
     # retornar a lista com o novo jogo
     # return render_template('lista.html', titulos='Jogos',jogos=lista)
-    return redirect('/')
+    return redirect(url_for('index'))
 
 
 @app.route('/login')
@@ -57,17 +56,17 @@ def autenticar():
         session['usuario_logado'] = request.form['usuario']
         flash(request.form['usuario'] + ' logou com sucesso!')
         proxima_pagina = request.form['proxima']
-        return redirect('/{}'.format(proxima_pagina))
+        return redirect(proxima_pagina)
     else:
         flash('Não logado, tente novamente!')
-        return redirect('/login')
+        return redirect(url_for('login'))
 
 
 @app.route('/logout')
 def logout():
     session['usuario_logado'] = None
     flash('Nenhum usuário logado!')
-    return redirect('/')
+    return redirect(url_for('index'))
 
 
 app.run(debug=True)

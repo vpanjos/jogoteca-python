@@ -107,3 +107,7 @@ def autenticar():
 - Como deslogar a sessão
 
 ##  Protegendo uma rota
+
+## URls mais dinâmicas
+- Usar função: url_for('nome_método')
+url_for passando o nome do método da rota, assim sempre irá pegar a rota retornada na função
