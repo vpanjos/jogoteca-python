@@ -27,9 +27,9 @@ def index():
 
 @app.route('/novo')
 def novo():
-    if 'usuario_logado' in session and session['usuario_logado'] != None:
-        return render_template('novo.html', titulo='Novo jogo')
-    return redirect(url_for('login', proxima=url_for('novo')))
+    if 'usuario_logado' not in session or session['usuario_logado'] == None:
+        return redirect(url_for('login', proxima=url_for('novo')))
+    return render_template('novo.html', titulo='Novo jogo')
 
 
 @app.route('/criar', methods=['POST', ])
@@ -39,8 +39,6 @@ def criar():
     console = request.form['console']
     jogo = Jogo(nome, categoria, console)
     lista.append(jogo)
-    # retornar a lista com o novo jogo
-    # return render_template('lista.html', titulos='Jogos',jogos=lista)
     return redirect(url_for('index'))
 
 
