@@ -10,6 +10,20 @@ class Jogo:
         self.categoria = categoria
         self.console = console
 
+class Usuario:
+    def __init__(self,id, nome , senha):
+        self.id = id
+        self.nome = nome
+        self.senha = senha
+
+usuario1 = Usuario('fulano', 'Fulano da Silva', '1234')
+usuario2 = Usuario('fulana', 'Fulana Pereira', '567')
+usuario3 = Usuario('vanessa', 'Vanessa Anjos', 'vpa')
+
+# dicionario de usuários
+usuarios = { usuario1.id: usuario1,
+             usuario2.id: usuario2,
+             usuario3.id: usuario3}
 
 # lista global desse pacote/arquivo
 jogo1 = Jogo('Super Mario', 'Ação', 'SNES')
