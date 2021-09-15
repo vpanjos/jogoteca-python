@@ -109,5 +109,9 @@ def autenticar():
 ##  Protegendo uma rota
 
 ## URls mais dinâmicas
-- Usar função: url_for('nome_método')
+- Usar função: 
+  ```python 
+  url_for('nome_método')
+  ```
+- Utilidade: Se uma rota for alterada eu continuo dependendo do nome da função ao invés da string da rota. Desta forma não é necessário alterar nada.
 url_for passando o nome do método da rota, assim sempre irá pegar a rota retornada na função
