@@ -120,3 +120,15 @@ Implementando autorização para criação de jogos pelos usuários
 url_for passando o nome do método da rota, assim sempre irá pegar a rota retornada na função.
   
 ## Múltiplos usuários
+- Criação de um dicionário de usuários com username e senha
+- Comparar se o usuário enviado no form tem no dicionário de de usuários
+```python
+def autenticar():
+    if request.form['usuario'] in usuarios:
+        usuario_logado = usuarios[request.form['usuario']]
+        if usuario_logado.senha == request.form['senha']:
+            session['usuario_logado'] = usuario_logado.id
+        flash(usuario_logado.nome + ' logou com sucesso!')
+        proxima_pagina = request.form['proxima']
+        return redirect(proxima_pagina)
+```
